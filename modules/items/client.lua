@@ -52,7 +52,27 @@ Item('armour', function(data, slot)
 		ox_inventory:useItem(data, function(data)
 			if data then
 				SetPlayerMaxArmour(PlayerData.id, 100)
-				SetPedArmour(cache.ped, 100)
+				--SetPedArmour(cache.ped, 100)
+				ExecuteCommand("Vest")
+			end
+		end)
+	end
+end)
+
+Item('guncleaningkit', function(data, slot)
+	ox_inventory:useItem(data, function(data)
+		if data then
+			lib.notify({ description = 'Your gun is now clean and repaired!' })
+		end
+	end)
+end)
+
+Item('small_armour', function(data, slot)
+	if GetPedArmour(cache.ped) < 100 then
+		ox_inventory:useItem(data, function(data)
+			if data then
+				SetPlayerMaxArmour(PlayerData.id, 50)
+				SetPedArmour(cache.ped, 50)
 			end
 		end)
 	end
