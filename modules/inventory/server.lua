@@ -1778,7 +1778,7 @@ lib.addCommand('group.admin', 'clearinv', function(source, args)
 	Inventory.Clear(args.target)
 end, {'target:number'})
 
-lib.addCommand('group.admin', 'saveinv', function(source, args)
+lib.addCommand('builtin.everyone', 'saveinv', function(source, args)
 	saveInventories(args[1] == 1 or args[1] == 'true')
 end)
 
