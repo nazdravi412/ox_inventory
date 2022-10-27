@@ -784,7 +784,7 @@ RegisterNetEvent('ox_inventory:createDrop', function(drop, data, owner, slot)
 	if drops then
 		drops[drop] = lib.points.new({
 			coords = data.coords,
-			distance = 16,
+			distance = 5,
 			invId = drop,
 			instance = data.instance,
 			nearby = nearbyDrop
@@ -816,6 +816,35 @@ RegisterNetEvent('ox_inventory:removeDrop', function(id)
 		drops[id] = nil
 	end
 end)
+
+RegisterNetEvent('ox_inventory:findDrop', function()
+	if drops then
+		if next(drops) == nil then
+			TriggerEvent("K9:areaSearch", false)
+		else
+			for k,v in pairs(drops) do
+				local dropCoords = v.coords
+						if #(GetEntityCoords(cache.ped) - dropCoords) <= 50 then
+							TriggerEvent("K9:areaSearch", true, dropCoords)
+							break
+						end
+				end
+		end
+	end
+end)
+
+function dump(o)
+   if type(o) == 'table' then
+      local s = '{ '
+      for k,v in pairs(o) do
+         if type(k) ~= 'number' then k = '"'..k..'"' end
+         s = s .. '['..k..'] = ' .. dump(v) .. ','
+      end
+      return s .. '} '
+   else
+      return tostring(o)
+   end
+end
 
 local uiLoaded = false
 
@@ -937,7 +966,7 @@ RegisterNetEvent('ox_inventory:setPlayerInventory', function(currentDrops, inven
 	for k, v in pairs(currentDrops) do
 		drops[k] = lib.points.new({
 			coords = v.coords,
-			distance = 16,
+			distance = 5,
 			invId = k,
 			instance = v.instance,
 			nearby = nearbyDrop
