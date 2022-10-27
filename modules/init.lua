@@ -6,7 +6,7 @@ lib.locale()
 
 shared = {
 	resource = GetCurrentResourceName(),
-	framework = GetConvar('inventory:framework', 'esx'),
+	framework = GetConvar('inventory:framework', 'nd'),
 	locale = GetConvar('inventory:locale', 'en'),
 	playerslots = GetConvarInt('inventory:slots', 50),
 	playerweight = GetConvarInt('inventory:weight', 30000),
@@ -63,7 +63,7 @@ else
 		enablekeys = json.decode(GetConvar('inventory:enablekeys', '[249]')),
 		aimedfiring = GetConvar('inventory:aimedfiring', 'false') == 'true',
 		giveplayerlist = GetConvar('inventory:giveplayerlist', 'false') == 'true',
-		weaponanims = GetConvar('inventory:weaponanims', 'true') == 'true',
+		weaponanims = GetConvar('inventory:weaponanims', 'true') == 'false',
 	}
 end
 
