@@ -1616,6 +1616,7 @@ RegisterServerEvent('ox_inventory:giveItem', function(slot, target, count)
 end)
 
 RegisterServerEvent('ox_inventory:updateWeapon', function(action, value, slot)
+	local source = source
 	local inventory = Inventories[source]
 
 	if not inventory then return end
