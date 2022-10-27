@@ -56,6 +56,156 @@ return {
 			notification = 'You ate a delicious burger'
 		},
 	},
+	
+	['hotdog'] = {
+		label = 'Hotdog',
+		weight = 220,
+		client = {
+			status = { hunger = 200000 },
+			anim = 'eating',
+			prop = { model = `prop_cs_hotdog_01`, pos = vec3(0.02, 0.02, -0.02), rot = vec3(90.0, 90.0, 0.0) },
+			usetime = 4000,
+			notification = 'You ate a delicious hotdog.'
+		},
+	},
+	
+	['donut'] = {
+		label = 'Donut',
+		weight = 220,
+		client = {
+			status = { hunger = 200000 },
+			anim = 'eating',
+			prop = { model = `prop_amb_donut`, pos = vec3(0.02, 0.02, -0.02), rot = vec3(90.0, 90.0, 0.0) },
+			usetime = 4000,
+			notification = 'You ate a delicious donut.'
+		},
+	},
+	
+	['taco'] = {
+		label = 'Taco',
+		weight = 220,
+		client = {
+			status = { hunger = 200000 },
+			anim = 'eating',
+			prop = { model = `prop_taco_01`, pos = vec3(0.02, 0.02, -0.02), rot = vec3(90.0, 90.0, 0.0) },
+			usetime = 4000,
+			notification = 'You ate a delicious taco.'
+		},
+	},
+	
+	['coffee'] = {
+		label = 'Coffee',
+		weight = 220,
+		client = {
+			status = { hunger = 200000 },
+			anim = 'drinking',
+			prop = { model = `p_amb_coffeecup_01`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
+			usetime = 4000,
+			notification = 'You ate a delicious taco.'
+		},
+	},
+	
+	['joint'] = {
+		label = 'Marijuana',
+		weight = 220,
+		client = {
+			status = { hunger = 200000 },
+			anim = 'smokingweed',
+			usetime = 10000,
+		},
+	},
+	
+	['cocaine'] = {
+		label = '1 Oz Cocaine',
+		weight = 220,
+		client = {
+			status = { hunger = 200000 },
+			anim = 'drinking',
+			prop = { model = `prop_cs_pills`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
+			usetime = 1000,
+		},
+	},
+	
+	['meth'] = {
+		label = '1 Oz Meth',
+		weight = 220,
+		client = {
+			status = { hunger = 200000 },
+			anim = 'drinking',
+			prop = { model = `prop_cs_pills`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
+			usetime = 1000,
+		},
+	},
+	
+	['drug_blue'] = {
+		label = 'Kilo of Heroin',
+		weight = 1000,
+	},
+	
+	['drug_white'] = {
+		label = 'Kilo of Cocaine',
+		weight = 1000,
+	},
+	
+	['drug_red'] = {
+		label = 'Kilo of Fentanyl',
+		weight = 1000,
+	},
+	
+	['weedbrick'] = {
+		label = 'Kilo of Weed',
+		weight = 1000,
+	},
+	
+	['scratched_wheel'] = {
+		label = 'Scratched Wheel',
+		weight = 1000,
+	},
+	
+	['carradio'] = {
+		label = 'Car Stereo',
+		weight = 1000,
+	},
+	
+	['wheel'] = {
+		label = 'Wheel',
+		weight = 1000,
+	},
+	
+	['touchscreen'] = {
+		label = 'Touchscreen Radio',
+		weight = 1000,
+	},
+	
+	['cardoor'] = {
+		label = 'Car Door',
+		weight = 1000,
+	},
+	
+	['bumper'] = {
+		label = 'Car Bumper',
+		weight = 1000,
+	},
+	
+	['hood'] = {
+		label = 'Car Hood',
+		weight = 1000,
+	},
+	
+	['laser_drill'] = {
+		label = 'Laser Drill',
+		weight = 100,
+	},
+	
+	['diamond'] = {
+		label = 'Diamond',
+		weight = 10,
+	},
+	
+	['gold'] = {
+		label = 'Gold Bar',
+		weight = 150,
+	},
 
 	['cola'] = {
 		label = 'eCola',
@@ -79,6 +229,37 @@ return {
 		}
 	},
 
+	['cigarette'] = {
+        label = 'cigarette',
+        weight = 50,
+        client = {
+			anim = 'smoking',
+            usetime = 12500
+        }
+    },
+	
+	['redwoods'] = {
+        label = 'Redwoods',
+        weight = 0,
+        stack = false,
+        close = true,
+        description = 'Pack of Original Red Wood Killer Cigarettes',
+        consume = 0,
+        client = {
+            anim = 'smoking',
+            usetime = 15000,
+            label = 'SMOKING A CIGARETTE . . .',
+        },
+        buttons = {
+            {
+                label = 'Remove Cigarette',
+                action = function(slot)
+                    TriggerServerEvent('gr8_stuff:item:removeCig', slot, {indent=true})
+                end
+            },
+        }
+    },
+
 	['garbage'] = {
 		label = 'Garbage',
 	},
@@ -91,8 +272,13 @@ return {
 		consume = 0
 	},
 
-	['identification'] = {
-		label = 'Identification',
+	['weaponlicense'] = {
+		label = 'Weapon License',
+	},
+	
+	['fakeid'] = {
+		label = 'Fake ID',
+		weight = 1,
 	},
 
 	['panties'] = {
@@ -110,6 +296,13 @@ return {
 	['lockpick'] = {
 		label = 'Lockpick',
 		weight = 160,
+		consume = 0,
+		client = {
+			anim = { dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@', clip = 'machinic_loop_mechandplayer' },
+			disable = { move = true, car = true, combat = true },
+			usetime = 5000,
+			cancel = true
+		}
 	},
 
 	['phone'] = {
@@ -177,10 +370,60 @@ return {
             usetime = 3500
 		}
 	},
+	
+	['small_armour'] = {
+		label = 'Undershirt Vest',
+		weight = 3000,
+		stack = false,
+		client = {
+			anim = { dict = 'clothingshirt', clip = 'try_shirt_positive_d' },
+            usetime = 3500
+		}
+	},
 
 	['clothing'] = {
 		label = 'Clothing',
 		consume = 0,
+	},
+	
+	['guncleaningkit'] = {
+		label = 'Gun Repair Kit',
+		weight = 10,
+		client = {
+			anim = { dict = 'missheistdockssetup1clipboard@idle_a', clip = 'idle_a', flag = 49 },
+			usetime = 5000,
+		},
+	},
+	
+	
+	['backpack'] = {
+		label = 'Backpack',
+		weight = 220,
+		stack = false,
+		consume = 0,
+		client = {
+			export = 'wasabi_backpack.openBackpack'
+		}
+	},
+	
+	['largebag'] = {
+		label = 'Large Duffle Bag',
+		weight = 220,
+		stack = false,
+		consume = 0,
+		client = {
+			add = function(total)
+				if total > 0 then
+					SetPedComponentVariation(cache.ped, 5, 82, 0, 0);
+				end
+			end,
+	
+			remove = function(total)
+				if total < 1 then
+					SetPedComponentVariation(cache.ped, 5, 0, 0, 0);
+				end
+			end
+		}
 	},
 
 	['mastercard'] = {
