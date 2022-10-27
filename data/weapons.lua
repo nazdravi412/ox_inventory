@@ -259,7 +259,7 @@ return {
 		},
 
 		['WEAPON_HAZARDCAN'] = {
-			label = 'Hazard Can',
+			label = 'Jerry Can',
 			weight = 12000,
 		},
 
@@ -581,7 +581,7 @@ return {
 		},
 
 		['WEAPON_VINTAGEPISTOL'] = {
-			label = 'Vintage Pistol',
+			label = 'Lidar',
 			weight = 100,
 			durability = 0.1,
 			ammoname = 'ammo-9'
@@ -1062,7 +1062,7 @@ return {
 		},
 
 		['ammo-flare'] = {
-			label = 'Flare round',
+			label = 'Flare',
 			weight = 38,
 		},
 
