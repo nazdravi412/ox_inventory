@@ -13,22 +13,22 @@
 
 return {
 	{
-		coords = vec3(452.3, -991.4, 30.7),
+		coords = vec3(1847.14, 3689.57, 34.27),
 		target = {
-			loc = vec3(451.25, -994.28, 30.69),
-			length = 1.2,
-			width = 5.6,
-			heading = 0,
-			minZ = 29.49,
-			maxZ = 32.09,
-			label = 'Open personal locker'
+			loc = vec3(1847.75, 3689.95, 34.27),
+			length = 0.5,
+			width = 0.5,
+			heading = 300,
+			minZ = 31.47,
+			maxZ = 35.47,
+			label = 'Open evidence locker'
 		},
-		name = 'policelocker',
-		label = 'Personal locker',
-		owner = true,
+		name = 'bcso_evidence',
+		label = 'Evidence Locker',
+		owner = false,
 		slots = 70,
 		weight = 70000,
-		groups = shared.police
+		--groups = shared.police
 	},
 
 	{
