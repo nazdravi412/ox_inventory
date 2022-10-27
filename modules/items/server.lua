@@ -21,6 +21,9 @@ Items.containers = {
 		whitelist = {
 			['pizza'] = true -- Pizza box for pizza only
 		}
+	},
+	['largebag'] = {
+		size = {10, 100000},
 	}
 }
 
@@ -380,5 +383,18 @@ end
 -- end)
 
 -----------------------------------------------------------------------------------------------
+
+Item('guncleaningkit', function(event, item, inventory, slot, data)
+	if event == 'usingItem' then
+		if Inventory.GetItem(inventory, item, inventory.items[slot].metadata, true) > 0 then
+			local weapon = exports.ox_inventory:GetCurrentWeapon(inventory)
+			if weapon then
+				exports.ox_inventory:SetDurability(source, weapon.slot, 100)
+			end
+		end
+	end
+end)
+
+
 
 server.items = Items
