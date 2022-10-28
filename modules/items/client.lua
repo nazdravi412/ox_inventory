@@ -67,6 +67,22 @@ Item('guncleaningkit', function(data, slot)
 	end)
 end)
 
+Item('tent', function(data, slot)
+	ox_inventory:useItem(data, function(data)
+		if data then
+			TriggerEvent("gl-camping:makeTent")
+		end
+	end)
+end)
+
+Item('campfire', function(data, slot)
+	ox_inventory:useItem(data, function(data)
+		if data then
+			TriggerEvent("gl-camping:makeCampFire")
+		end
+	end)
+end)
+
 Item('small_armour', function(data, slot)
 	if GetPedArmour(cache.ped) < 100 then
 		ox_inventory:useItem(data, function(data)
