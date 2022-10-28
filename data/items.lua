@@ -386,6 +386,32 @@ return {
 		consume = 0,
 	},
 	
+	['campfire'] = {
+		label = 'Firewood',
+		consume = 1,
+	},
+	
+	['meat'] = {
+		label = 'Raw Meat',
+		consume = 1,
+	},
+	
+	['cookedmeat'] = {
+		label = 'Cooked Meat',
+		consume = 1,
+		weight = 220,
+		client = {
+			anim = 'eating',
+			prop = 'steak',
+			usetime = 2500,
+		},
+	},
+	
+	['tent'] = {
+		label = 'Tent',
+		consume = 1,
+	},
+	
 	['guncleaningkit'] = {
 		label = 'Gun Repair Kit',
 		weight = 10,
