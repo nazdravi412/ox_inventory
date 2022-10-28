@@ -7,6 +7,7 @@ return {
 	},
 	prop = {
 		['burger'] = { model = `prop_cs_burger_01`, pos = vec3(0.02, 0.02, -0.02), rot = vec3(0.0, 0.0, 0.0) },
+		['steak'] = { model = `prop_cs_steak`, pos = vec3(0.02, 0.02, -0.02), rot = vec3(0.0, 0.0, 0.0) },
 		['hotdog'] = { model = `prop_cs_hotdog_01`, pos = vec3(0.02, 0.02, -0.02), rot = vec3(0.0, 0.0, 0.0) },
 		['cigarette'] = { model = `prop_cs_ciggy_01`,  pos = vec3(0.00, 0.00, 0.00), rot = vec3(0.0, 0.0, 0.0) },
 	}
